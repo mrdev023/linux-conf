@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OS_NAME=`cat /etc/os-release | grep "^NAME=" | sed 's/NAME=//g'`
+OS_NAME=`cat /etc/os-release | grep "^NAME=" | sed 's/NAME=//g' | sed 's/"//g'`
 OS_NAME=${OS_NAME^^} # UPPERCASE
 
 case $OS_NAME in

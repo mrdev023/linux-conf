@@ -81,7 +81,10 @@ install_neovim () {
             mkdir -p ~/.config/nvim
             cp -r ./configs/nvim/* ~/.config/nvim
             refresh_repo
-            sudo apt install ripgrep -y
+            sudo apt install ripgrep ruby-dev -y
+            gem install --user-install solargraph
+            curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+            source ~/.cargo/env
             ;;
         *)
             echo "No modification"

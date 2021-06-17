@@ -38,6 +38,7 @@ augroup vimrc-incsearch-highlight
 	autocmd CmdlineLeave /,\? :set nohlsearch
 augroup END
 
+command! LogPath :lua print(vim.inspect(vim.lsp.get_log_path()))
 
 nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For >")})<cr>
 

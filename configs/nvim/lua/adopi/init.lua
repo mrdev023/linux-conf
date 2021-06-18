@@ -12,23 +12,25 @@ vim.cmd [[packadd packer.nvim]]
 
 
 require('packer').startup(function()
-		-- Packer can manage itself
-		use 'wbthomason/packer.nvim'
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
 
-		use {'dracula/vim'}
-		use {'whatyouhide/vim-gotham'}
-		use {'neovim/nvim-lspconfig'}
-		use {'hrsh7th/nvim-compe'}
-		use {'shaunsingh/moonlight.nvim'}
+  use {'dracula/vim'}
+  use {'whatyouhide/vim-gotham'}
+  use {'neovim/nvim-lspconfig'}
+  use {'hrsh7th/nvim-compe'}
+  use {'shaunsingh/moonlight.nvim'}
 
-        -- Telescope project search
-        use {
-            'nvim-telescope/telescope.nvim',
-            requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
-        }
+  -- Telescope project search
+  use {
+      'nvim-telescope/telescope.nvim',
+      requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+  }
 
-        use {'nvim-treesitter/nvim-treesitter'}
+  use {'nvim-treesitter/nvim-treesitter'}
 
+  use 'kyazdani42/nvim-web-devicons' -- removing this line doesn't change the error
+  use 'kyazdani42/nvim-tree.lua'
 end)
 
 

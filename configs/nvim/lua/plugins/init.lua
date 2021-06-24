@@ -11,6 +11,7 @@ function install_packages()
     use {'dracula/vim'}
     use {'whatyouhide/vim-gotham'}
     use {'neovim/nvim-lspconfig'}
+    use {'kabouzeid/nvim-lspinstall'}
     use {'hrsh7th/nvim-compe'}
     use {'shaunsingh/moonlight.nvim'}
 

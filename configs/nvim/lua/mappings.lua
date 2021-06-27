@@ -23,6 +23,10 @@ local function init()
     map('n', '<space>r', '<cmd>lua vim.lsp.buf.references()<CR>')
     map('n', '<space>s', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
 
+    -------------------- LAZYGIT -------------------------------
+    -- Install docs : https://github.com/jesseduffield/lazygit
+    map('n', '<space>lg', '<cmd>LazyGit<CR>')
+
     -------------------- COMMANDS ------------------------------
     cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'  -- disabled in visual mode
 end

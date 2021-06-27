@@ -25,6 +25,7 @@ function install_packages()
 
     use 'kyazdani42/nvim-web-devicons' -- removing this line doesn't change the error
     use 'kyazdani42/nvim-tree.lua'
+    use 'kdheepak/lazygit.nvim'
 end
 
 function init()

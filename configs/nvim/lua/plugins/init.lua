@@ -2,6 +2,7 @@ function configure_packages()
     call_with_helpers(require('plugins.lspconfig').init)
     call_with_helpers(require('plugins.compe').init)
     call_with_helpers(require('plugins.nvim-treesitter').init)
+    call_with_helpers(require('plugins.web-devicons').init)
 end
 
 function install_packages()

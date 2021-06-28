@@ -1,0 +1,3 @@
+git:
+  pull:
+    mode: 'rebase' # one of 'auto' | 'merge' | 'rebase' | 'ff-only', auto reads from git configuration

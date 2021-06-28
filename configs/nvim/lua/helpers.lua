@@ -2,6 +2,7 @@ local cmd = vim.cmd                     -- to execute Vim commands e.g. cmd('pwd
 local fn = vim.fn                       -- to call Vim functions e.g. fn.bufnr()
 local g = vim.g                         -- a table to access global variables
 local opt = vim.opt                     -- to set options
+local o = vim.o                         -- to set options
 
 local function map(mode, lhs, rhs, opts)
   local options = {noremap = true}
@@ -32,6 +33,7 @@ function get_helpers()
         fn = fn,
         g = g,
         opt = opt,
+        o = o,
         dump = dump,
         call_with_helpers = call_with_helpers,
     }

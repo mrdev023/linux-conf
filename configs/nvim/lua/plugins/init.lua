@@ -3,6 +3,7 @@ function configure_packages()
     call_with_helpers(require('plugins.compe').init)
     call_with_helpers(require('plugins.nvim-treesitter').init)
     call_with_helpers(require('plugins.web-devicons').init)
+    call_with_helpers(require('plugins.nvim-comment').init)
 end
 
 function install_packages()
@@ -27,6 +28,7 @@ function install_packages()
     use 'kyazdani42/nvim-web-devicons' -- removing this line doesn't change the error
     use 'kyazdani42/nvim-tree.lua'
     use 'kdheepak/lazygit.nvim'
+    use 'terrortylor/nvim-comment'
 end
 
 function init()

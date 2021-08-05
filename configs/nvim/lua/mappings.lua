@@ -23,6 +23,14 @@ local function init()
     map('n', '<space>r', '<cmd>lua vim.lsp.buf.references()<CR>')
     map('n', '<space>s', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
 
+    -------------------- HlsLens -------------------------------
+    map('n', 'n', "<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>")
+    map('n', 'N', "<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>")
+    map('n', '*', "*<Cmd>lua require('hlslens').start()<CR>")
+    map('n', '#', "#<Cmd>lua require('hlslens').start()<CR>")
+    map('n', 'g*', "g*<Cmd>lua require('hlslens').start()<CR>")
+    map('n', 'g#', "g#<Cmd>lua require('hlslens').start()<CR>")
+
     -------------------- LAZYGIT -------------------------------
     -- Install docs : https://github.com/jesseduffield/lazygit
     map('n', '<space>lg', '<cmd>LazyGit<CR>')

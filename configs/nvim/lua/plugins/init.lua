@@ -6,6 +6,7 @@ function configure_packages()
     call_with_helpers(require('plugins.nvim-comment').init)
     call_with_helpers(require('plugins.nvim-autopairs').init)
     call_with_helpers(require('plugins.nvim-notify').init)
+    call_with_helpers(require('plugins.nvim-hlslens').init)
 end
 
 function install_packages()
@@ -34,6 +35,8 @@ function install_packages()
     use 'terrortylor/nvim-comment'
     use 'rcarriga/nvim-notify'          -- fancy notification
     use 'romgrk/barbar.nvim'            -- Tabs, as understood by any other editor.
+    use 'tpope/vim-endwise'             -- auto complete block with end
+    use 'kevinhwang91/nvim-hlslens'     -- nvim-hlslens helps you better glance at matched information, seamlessly jump between matched instances.
     use 'mhinz/vim-startify'            -- The fancy start screen for Vim.
 end
 

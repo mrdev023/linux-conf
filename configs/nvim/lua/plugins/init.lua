@@ -33,6 +33,7 @@ function install_packages()
     use 'kdheepak/lazygit.nvim'
     use 'terrortylor/nvim-comment'
     use 'rcarriga/nvim-notify'          -- fancy notification
+    use 'romgrk/barbar.nvim'            -- Tabs, as understood by any other editor.
     use 'mhinz/vim-startify'            -- The fancy start screen for Vim.
 end
 

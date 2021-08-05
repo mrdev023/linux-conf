@@ -5,6 +5,7 @@ function configure_packages()
     call_with_helpers(require('plugins.nvim-web-devicons').init)
     call_with_helpers(require('plugins.nvim-comment').init)
     call_with_helpers(require('plugins.nvim-autopairs').init)
+    call_with_helpers(require('plugins.nvim-notify').init)
 end
 
 function install_packages()
@@ -22,7 +23,7 @@ function install_packages()
     -- Telescope project search
     use {
         'nvim-telescope/telescope.nvim',
-        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}, {'nvim-lua/popup.nvim'}}
     }
 
     use 'nvim-treesitter/nvim-treesitter'
@@ -31,6 +32,7 @@ function install_packages()
     use 'kyazdani42/nvim-tree.lua'
     use 'kdheepak/lazygit.nvim'
     use 'terrortylor/nvim-comment'
+    use 'rcarriga/nvim-notify'          -- fancy notification
     use 'mhinz/vim-startify'            -- The fancy start screen for Vim.
 end
 

@@ -7,6 +7,7 @@ function configure_packages()
     call_with_helpers(require('plugins.nvim-autopairs').init)
     call_with_helpers(require('plugins.nvim-notify').init)
     call_with_helpers(require('plugins.nvim-hlslens').init)
+    call_with_helpers(require('plugins.nvim-flutter-tools').init)
 end
 
 function install_packages()
@@ -37,6 +38,8 @@ function install_packages()
     use 'romgrk/barbar.nvim'            -- Tabs, as understood by any other editor.
     use 'tpope/vim-endwise'             -- auto complete block with end
     use 'kevinhwang91/nvim-hlslens'     -- nvim-hlslens helps you better glance at matched information, seamlessly jump between matched instances.
+    use 'mfussenegger/nvim-dap'         -- debugger
+    use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
     use 'mhinz/vim-startify'            -- The fancy start screen for Vim.
 end
 

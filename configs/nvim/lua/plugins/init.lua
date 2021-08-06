@@ -8,6 +8,7 @@ function configure_packages()
     call_with_helpers(require('plugins.nvim-notify').init)
     call_with_helpers(require('plugins.nvim-hlslens').init)
     call_with_helpers(require('plugins.nvim-flutter-tools').init)
+    call_with_helpers(require('plugins.nvim-fterm').init)
 end
 
 function install_packages()
@@ -40,6 +41,7 @@ function install_packages()
     use 'kevinhwang91/nvim-hlslens'     -- nvim-hlslens helps you better glance at matched information, seamlessly jump between matched instances.
     use 'mfussenegger/nvim-dap'         -- debugger
     use {'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim'}
+    use 'numtostr/FTerm.nvim'           -- Floating terminal
     use 'mhinz/vim-startify'            -- The fancy start screen for Vim.
 end
 

@@ -49,3 +49,15 @@ Set-PSReadLineOption @PSReadLineOptions
 
 # Reload profile
 . $PROFILE
+
+# Configure WSL
+Get-Command wsl
+if ($? -eq $True) {
+  $linuxWindowsConfPath = (Get-Location).Path.Replace('C:', '/mnt/c').Replace('\', '/')
+  $linuxHomeConfPath = "/home/$(wsl -e 'whoami')/myconf"
+
+  bash -c "ln -s $linuxWindowsConfPath $linuxHomeConfPath"
+  bash -c "$linuxHomeConfPath/install.sh"
+} else {
+  Write-Output 'WSL is not installed. Ignore...'
+}

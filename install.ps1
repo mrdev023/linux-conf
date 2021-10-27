@@ -1,12 +1,19 @@
 # Install OhMyPosh
-winget install JanDeDobbeleer.OhMyPosh
+winget list -q JanDeDobbeleer.OhMyPosh
+if ($? -eq $False) {
+  winget install JanDeDobbeleer.OhMyPosh
+}
 
 # Reload path
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
 
 # Install modules
-Install-Module -Name Terminal-Icons -Repository PSGallery -Force
-Install-Module -Name PSReadLine -AllowPrerelease -Force
+if (-not (Get-Module -ListAvailable -Name Terminal-Icons)) {
+  Install-Module -Name Terminal-Icons -Repository PSGallery -Force
+}
+if (-not (Get-Module -ListAvailable -Name PSReadLine)) {
+  Install-Module -Name PSReadLine -AllowPrerelease -Force
+}
 
 # Update profile configuration
 
@@ -29,9 +36,16 @@ if ($host.Name -eq 'ConsoleHost')
 Write-Output "oh-my-posh --init --shell pwsh --config '$powershellConfig' | Invoke-Expression" | Out-File -FilePath $PROFILE -Append
 
 # 2. Configure PSReadLine | Predictive Intellisense
-Write-Output 'Set-PSReadLineOption -PredictionSource History' | Out-File -FilePath $PROFILE -Append
-Write-Output 'Set-PSReadLineOption -PredictionViewStyle ListView' | Out-File -FilePath $PROFILE -Append
-Write-Output 'Set-PSReadLineOption -EditMode Windows' | Out-File -FilePath $PROFILE -Append
+Write-Output @'
+$PSReadLineOptions = @{
+  EditMode = "Windows"
+  HistoryNoDuplicates = $True
+  PredictionSource = "History"
+  CompletionQueryItems = 5
+  ShowToolTips = $True
+}
+Set-PSReadLineOption @PSReadLineOptions
+'@ | Out-File -FilePath $PROFILE -Append
 
 # Reload profile
 . $PROFILE

@@ -9,8 +9,8 @@ local function init()
     map('n', '<space>ps', [[<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For >")})<CR>]])
 
     -------------------- NvimTreeToggle ------------------------
-    map('n', '<space>tt', '<cmd>NvimTreeToggle<CR>')
-    map('n', '<space>tr', '<cmd>NvimTreeRefresh<CR>')
+    map('n', '<F4>', '<cmd>NvimTreeToggle<CR>')
+    map('n', '<F5>', '<cmd>NvimTreeRefresh<CR>')
 
     -------------------- LSP -----------------------------------
     map('n', '<space>,', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
@@ -23,9 +23,21 @@ local function init()
     map('n', '<space>r', '<cmd>lua vim.lsp.buf.references()<CR>')
     map('n', '<space>s', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
 
+    -------------------- HlsLens -------------------------------
+    map('n', 'n', "<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>")
+    map('n', 'N', "<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>")
+    map('n', '*', "*<Cmd>lua require('hlslens').start()<CR>")
+    map('n', '#', "#<Cmd>lua require('hlslens').start()<CR>")
+    map('n', 'g*', "g*<Cmd>lua require('hlslens').start()<CR>")
+    map('n', 'g#', "g#<Cmd>lua require('hlslens').start()<CR>")
+
+    -------------------- FTerm ---------------------------------
+    map('n', '<F3>', '<CMD>lua require("FTerm").toggle()<CR>')
+    map('t', '<F3>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+
     -------------------- LAZYGIT -------------------------------
     -- Install docs : https://github.com/jesseduffield/lazygit
-    map('n', '<space>lg', '<cmd>LazyGit<CR>')
+    map('n', '<F2>', '<cmd>LazyGit<CR>')
 
     -------------------- COMMANDS ------------------------------
     cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'  -- disabled in visual mode

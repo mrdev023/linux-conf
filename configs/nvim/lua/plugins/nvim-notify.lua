@@ -1,5 +1,5 @@
 local function init()
-    require('nvim_comment').setup()
+    vim.notify = require("notify")
 end
 
 return {

@@ -21,6 +21,7 @@ local function init()
     opt.termguicolors = true            -- True color support
     opt.wildmode = {'list', 'longest'}  -- Command-line completion mode
     opt.wrap = false                    -- Disable line wrap
+    opt.mouse = 'a'                     -- Enable mouse for all previous modes
 end
 
 return {

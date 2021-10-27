@@ -1,6 +1,6 @@
 local function init()
     require'nvim-treesitter.configs'.setup {
-        ensure_installed = "maintained",  -- list of languages 
+        ensure_installed = "all",  -- list of languages 
         highlight = {
             enable = true,              
         },

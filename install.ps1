@@ -30,8 +30,7 @@ Write-Output "oh-my-posh --init --shell pwsh --config '$powershellConfig' | Invo
 
 # 2. Configure PSReadLine | Predictive Intellisense
 Write-Output 'Set-PSReadLineOption -PredictionSource History' | Out-File -FilePath $PROFILE -Append
-Write-Output 'Set-PSReadLineOption -HistoryNoDuplicates:$True' | Out-File -FilePath $PROFILE -Append
-Write-Output 'Set-PSReadLineOption -ShowToolTips:$True' | Out-File -FilePath $PROFILE -Append
+Write-Output 'Set-PSReadLineOption -PredictionViewStyle ListView' | Out-File -FilePath $PROFILE -Append
 Write-Output 'Set-PSReadLineOption -EditMode Windows' | Out-File -FilePath $PROFILE -Append
 
 # Reload profile

@@ -1,3 +1,10 @@
+# Check if powershell is start as Admin otherwise runAs Admin
+if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
+  $script = (Get-Location).Path + "\install.ps1"
+  Start-Process pwsh -Verb runAs "$script"
+  Break
+}
+
 # Install OhMyPosh
 winget list -q JanDeDobbeleer.OhMyPosh
 if ($? -eq $False) {
@@ -40,6 +47,7 @@ Write-Output @'
 $PSReadLineOptions = @{
   EditMode = "Windows"
   HistoryNoDuplicates = $True
+  PredictionViewStyle = "ListView"
   PredictionSource = "History"
   CompletionQueryItems = 5
   ShowToolTips = $True

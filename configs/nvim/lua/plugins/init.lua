@@ -1,6 +1,7 @@
 function configure_packages()
     call_with_helpers(require('plugins.lspconfig').init)
     call_with_helpers(require('plugins.compe').init)
+    call_with_helpers(require('plugins.nvim-tree').init)
     call_with_helpers(require('plugins.nvim-treesitter').init)
     call_with_helpers(require('plugins.nvim-web-devicons').init)
     call_with_helpers(require('plugins.nvim-autopairs').init)
@@ -47,7 +48,7 @@ function install_packages()
 
     -- Syntax
     use 'moll/vim-node'
-    use 'zinit-zsh/zplugin-vim-syntax'
+    -- use 'zinit-zsh/zplugin-vim-syntax' -- NOT WORKING
     use 'editorconfig/editorconfig-vim'
     use 'chrisbra/csv.vim'
     use 'npxbr/glow.nvim'
@@ -117,6 +118,7 @@ function install_packages()
     use 'ludovicchabant/vim-gutentags'
 
     -- General Plugins
+    use 'github/copilot'                -- Copilot is a vim plugin that helps you to create your own vim plugins.
     use 'rcarriga/nvim-notify'          -- fancy notification
     use 'mfussenegger/nvim-dap'         -- debugger
     use 'numtostr/FTerm.nvim'           -- Floating terminal

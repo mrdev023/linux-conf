@@ -22,6 +22,7 @@ local function init()
     map('n', '<space>m', '<cmd>lua vim.lsp.buf.rename()<CR>')
     map('n', '<space>r', '<cmd>lua vim.lsp.buf.references()<CR>')
     map('n', '<space>s', '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
+    map('n', '<leader>T', '<cmd>lua require\'lsp_extensions\'.inlay_hints()<CR>')
 
     -------------------- HlsLens -------------------------------
     map('n', 'n', "<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>")
@@ -38,6 +39,9 @@ local function init()
     -------------------- LAZYGIT -------------------------------
     -- Install docs : https://github.com/jesseduffield/lazygit
     map('n', '<F2>', '<cmd>LazyGit<CR>')
+
+    -------------------- OTHER ---------------------------------
+    map('i', '<Esc>', '<Esc>:w<CR>')
 
     -------------------- COMMANDS ------------------------------
     cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'  -- disabled in visual mode

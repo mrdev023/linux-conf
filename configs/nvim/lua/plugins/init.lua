@@ -1,6 +1,7 @@
 function configure_packages()
     call_with_helpers(require('plugins.lspconfig').init)
     call_with_helpers(require('plugins.compe').init)
+    call_with_helpers(require('plugins.nvim-rust-tools').init)
     call_with_helpers(require('plugins.nvim-tree').init)
     call_with_helpers(require('plugins.nvim-treesitter').init)
     call_with_helpers(require('plugins.nvim-web-devicons').init)
@@ -30,7 +31,8 @@ function install_packages()
     use 'neovim/nvim-lspconfig'
     use 'onsails/lspkind-nvim'
     use 'kabouzeid/nvim-lspinstall'
-
+    use 'simrat39/rust-tools.nvim'
+  
     -- Autocomplete
     use 'hrsh7th/nvim-compe'
     use 'SirVer/ultisnips'
@@ -118,7 +120,7 @@ function install_packages()
     use 'ludovicchabant/vim-gutentags'
 
     -- General Plugins
-    use 'github/copilot'                -- Copilot is a vim plugin that helps you to create your own vim plugins.
+    use 'github/copilot.vim'            -- Copilot is a vim plugin that helps you to create your own vim plugins.
     use 'rcarriga/nvim-notify'          -- fancy notification
     use 'mfussenegger/nvim-dap'         -- debugger
     use 'numtostr/FTerm.nvim'           -- Floating terminal

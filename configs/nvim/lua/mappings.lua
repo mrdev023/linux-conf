@@ -11,6 +11,16 @@ local function init()
     -------------------- NvimTreeToggle ------------------------
     map('n', '<F4>', '<cmd>NvimTreeToggle<CR>')
     map('n', '<F5>', '<cmd>NvimTreeRefresh<CR>')
+    
+    -------------------- BarBar --------------------------------
+    -- Move to previous/next
+    map('n', '<A-,>', ':BufferPrevious<CR>', opts)
+    map('n', '<A-.>', ':BufferNext<CR>', opts)
+    -- Re-order to previous/next
+    map('n', '<A-<>', ':BufferMovePrevious<CR>', opts)
+    map('n', '<A->>', ' :BufferMoveNext<CR>', opts)
+    -- Close buffer
+    map('n', '<A-c>', ':BufferClose<CR>', opts)
 
     -------------------- LSP -----------------------------------
     map('n', '<space>,', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
@@ -31,6 +41,11 @@ local function init()
     map('n', '#', "#<Cmd>lua require('hlslens').start()<CR>")
     map('n', 'g*', "g*<Cmd>lua require('hlslens').start()<CR>")
     map('n', 'g#', "g#<Cmd>lua require('hlslens').start()<CR>")
+
+    -------------------- DAP -----------------------------------
+    map('n', '<A-b>', '<cmd>lua require\'dap\'.toggle_breakpoint()<CR>', opts)
+    map('n', '<A-c>', '<cmd>lua require\'dap\'.continue()<CR>', opts)
+    map('n', '<A-o>', '<cmd>lua require\'dap\'.repl.open()<CR>', opts)
 
     -------------------- FTerm ---------------------------------
     map('n', '<F3>', '<CMD>lua require("FTerm").toggle()<CR>')

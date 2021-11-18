@@ -1,5 +1,6 @@
 function configure_packages()
     call_with_helpers(require('plugins.lspconfig').init)
+    call_with_helpers(require('plugins.dap').init)
     call_with_helpers(require('plugins.compe').init)
     call_with_helpers(require('plugins.nvim-rust-tools').init)
     call_with_helpers(require('plugins.nvim-tree').init)

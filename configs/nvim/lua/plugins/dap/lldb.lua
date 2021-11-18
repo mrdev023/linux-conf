@@ -21,7 +21,10 @@ local function init()
     },
   }
   dap.configurations.c = dap.configurations.cpp
-  dap.configurations.rust = dap.configurations.cpp
+  -- dap.configurations.rust = dap.configurations.cpp
+  -- dap.configurations.rust[1].program = function()
+  --   return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/target/debug/', 'file')
+  -- end
 end
 
 return {

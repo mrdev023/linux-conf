@@ -44,8 +44,9 @@ local function init()
 
     -------------------- DAP -----------------------------------
     map('n', '<A-b>', '<cmd>lua require\'dap\'.toggle_breakpoint()<CR>', opts)
-    map('n', '<A-c>', '<cmd>lua require\'dap\'.continue()<CR>', opts)
-    map('n', '<A-o>', '<cmd>lua require\'dap\'.repl.open()<CR>', opts)
+    map('n', '<A-v>', '<cmd>lua require\'dap\'.set_breakpoint(vim.fn.input(\'Breakpoint condition: \'))<CR>', opts)
+    map('n', '<A-n>', '<cmd>lua require\'dap\'.continue()<CR>', opts)
+    map('n', '<A-o>', '<cmd>lua require\'dap\'.repl.toggle()<CR>', opts)
 
     -------------------- FTerm ---------------------------------
     map('n', '<F3>', '<CMD>lua require("FTerm").toggle()<CR>')

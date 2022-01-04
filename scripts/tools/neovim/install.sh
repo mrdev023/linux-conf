@@ -12,8 +12,8 @@ if [[ "$WITH_NEOVIM" == 'yes' ]]; then
     echo '[INFO] Neovim already installed'
   fi
 
-  if [[ "$WITH_CUSTOM_LAZYGIT_CONFIG" == 'yes' || "$WITH_CUSTOM_LAZYGIT_CONFIG" == 'force' ]]; then
-    if [[ -d "$HOME/.config/lazygit" && "$WITH_CUSTOM_LAZYGIT_CONFIG" == 'force' ]]; then
+  if [[ "$WITH_LAZYGIT_CONFIG" == 'yes' || "$WITH_LAZYGIT_CONFIG" == 'force' ]]; then
+    if [[ -d "$HOME/.config/lazygit" && "$WITH_LAZYGIT_CONFIG" == 'force' ]]; then
       rm -rf "$HOME/.config/lazygit"
       echo '[INFO] Lazygit config removed | Forced by environment variable'
     fi
@@ -25,8 +25,8 @@ if [[ "$WITH_NEOVIM" == 'yes' ]]; then
     fi
   fi
 
-  if [[ "$WITH_CUSTOM_NEOVIM_CONFIG" == 'yes' || "$WITH_CUSTOM_NEOVIM_CONFIG" == 'force' ]]; then
-    if [[ -d "$HOME/.config/nvim" && "$WITH_CUSTOM_NEOVIM_CONFIG" == 'force' ]]; then
+  if [[ "$WITH_NEOVIM_CONFIG" == 'yes' || "$WITH_NEOVIM_CONFIG" == 'force' ]]; then
+    if [[ -d "$HOME/.config/nvim" && "$WITH_NEOVIM_CONFIG" == 'force' ]]; then
       rm -rf "$HOME/.config/nvim"
       echo '[INFO] Neovim config removed | Forced by environment variable'
     fi

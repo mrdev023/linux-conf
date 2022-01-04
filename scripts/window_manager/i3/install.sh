@@ -5,9 +5,9 @@ if [[ "$WINDOW_MANAGER" == 'i3' ]]; then
     install_package i3-wm
     echo '[INFO] I3 installed'
 
-    if [[ "$WITH_WINDOW_MANAGER_DEPENDENCIES" == 'yes' ]]; then
+    #if [[ "$WITH_WINDOW_MANAGER_DEPENDENCIES" == 'yes' ]]; then
       #install_package ripgrep fd dart lazygit rust-analyzer lldb
-    fi
+    #fi
   else
     echo '[INFO] I3 already installed'
   fi

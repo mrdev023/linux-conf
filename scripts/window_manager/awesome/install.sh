@@ -6,7 +6,7 @@ if [[ "$WINDOW_MANAGER" == 'awesome' ]]; then
     echo '[INFO] Awesome installed'
 
     if [[ "$WITH_WINDOW_MANAGER_DEPENDENCIES" == 'yes' ]]; then
-      #install_package ripgrep fd dart lazygit rust-analyzer lldb
+      install_package alacritty rofi
     fi
   else
     echo '[INFO] Awesome already installed'

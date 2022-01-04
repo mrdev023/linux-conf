@@ -4,6 +4,10 @@ if [[ "$WITH_NEOVIM" == 'yes' ]]; then
   if ! command_exists nvim; then
     install_package neovim
     echo '[INFO] Neovim installed'
+
+    if [[ "$WITH_NEOVIM_DEPENDENCIES" == 'yes' ]]; then
+      install_package ripgrep fd dart lazygit rust-analyzer lldb
+    fi
   else
     echo '[INFO] Neovim already installed'
   fi

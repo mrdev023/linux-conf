@@ -8,6 +8,11 @@ if [[ "$WITH_NEOVIM" == 'yes' ]]; then
     echo '[INFO] Neovim already installed'
   fi
 
+  if [[ "$WITH_LAZYGIT" == 'yes' && ! -d "$HOME/.config/lazygit" ]]; then
+    ln -s "$CWD/configs/lazygit" "$HOME/.config/lazygit"
+    echo "[INFO] Neovim config linked with symbolic link : $CWD/configs/lazygit -> $HOME/.config/lazygit"
+  fi
+  
   if [[ ! -d "$HOME/.config/nvim" ]]; then
     ln -s "$CWD/configs/nvim" "$HOME/.config/nvim"
     echo "[INFO] Neovim config linked with symbolic link : $CWD/configs/nvim -> $HOME/.config/nvim"

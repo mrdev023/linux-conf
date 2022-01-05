@@ -366,7 +366,7 @@ end, {
     group = "awesome"
 }), -- Menubar
 awful.key({modkey}, "p", function()
-    awful.spawn.with_shell("rofi -modi 'run,ssh' -show drun &>> /tmp/rofi.log")
+    awful.spawn.with_shell("rofi -show drun &>> /tmp/rofi.log")
     -- menubar.show()
 end, {
     description = "show the menubar",

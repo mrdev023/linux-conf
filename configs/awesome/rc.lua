@@ -185,7 +185,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             mpris_widget(),
-            volume_widget(),
+            volume_widget({ widget_type = 'arc' }),
             cpu_widget({ width = 40 }),
             ram_widget(),
             net_speed_widget(),

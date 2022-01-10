@@ -494,6 +494,8 @@ end), awful.button({modkey}, 3, function(c)
     awful.mouse.client.resize(c)
 end))
 
+globalkeys, clientkeys, clientbuttons = require('keymapping').bind(globalkeys, clientkeys, clientbuttons)
+
 -- Set keys
 root.keys(globalkeys)
 -- }}}

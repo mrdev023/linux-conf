@@ -74,6 +74,10 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 mytextclock = wibox.widget.textclock()
 
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
+local net_speed_widget = require("awesome-wm-widgets.net-speed-widget.net-speed")
+local mpris_widget = require("awesome-wm-widgets.mpris-widget")
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(awful.button({}, 1, function(t)
@@ -180,7 +184,11 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            mpris_widget(),
             volume_widget(),
+            cpu_widget({ width = 40 }),
+            ram_widget(),
+            net_speed_widget(),
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,

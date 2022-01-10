@@ -73,6 +73,8 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
 
+local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(awful.button({}, 1, function(t)
     t:view_only()
@@ -178,6 +180,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            volume_widget(),
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,

@@ -27,6 +27,7 @@ find ./scripts -type f -iname "*.sh" -exec chmod +x {} \;
 # Install and configure functionality
 ./scripts/tools/neovim/install.sh
 ./scripts/tools/rofi/install.sh
+./scripts/tools/alacritty/install.sh
 ./scripts/window_manager/awesome/install.sh
 ./scripts/window_manager/i3/install.sh
 ./scripts/tools/fonts/install.sh

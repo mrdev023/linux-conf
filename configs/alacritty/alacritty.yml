@@ -1,0 +1,4 @@
+font:
+  normal:
+    family: FiraCode NF
+background_opacity: 0.5 # Require `picom -f &` in .xinitrc

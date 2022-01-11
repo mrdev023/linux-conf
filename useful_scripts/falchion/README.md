@@ -13,9 +13,13 @@ Github: jnettlet
 
 ## Common
 
-```
+```bash
 cp ./99-asus-falchion.hwdb /etc/udev/hwdb.d/99-asus-falchion.hwdb
 systemd-hwdb update
+
+# or 
+
+curl https://raw.githubusercontent.com/mrdev023/linux-conf/main/useful_scripts/falchion/install.sh -o - | bash
 ```
 
 ## X11

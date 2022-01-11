@@ -29,3 +29,4 @@ find ./scripts -type f -iname "*.sh" -exec chmod +x {} \;
 ./scripts/tools/rofi/install.sh
 ./scripts/window_manager/awesome/install.sh
 ./scripts/window_manager/i3/install.sh
+./scripts/tools/fonts/install.sh

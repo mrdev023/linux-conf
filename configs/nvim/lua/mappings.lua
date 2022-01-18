@@ -9,8 +9,9 @@ local function init()
     map('n', '<space>ps', [[<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For >")})<CR>]])
 
     -------------------- NvimTreeToggle ------------------------
-    map('n', '<F4>', '<cmd>NvimTreeToggle<CR>')
-    map('n', '<F5>', '<cmd>NvimTreeRefresh<CR>')
+    map('n', 'tt', '<cmd>NvimTreeToggle<CR>')
+    map('n', 'tr', '<cmd>NvimTreeRefresh<CR>')
+    map('n', 'tf', '<cmd>NvimTreeFocus<CR>')
     
     -------------------- BarBar --------------------------------
     -- Move to previous/next
@@ -18,7 +19,7 @@ local function init()
     map('n', '<A-.>', ':BufferNext<CR>', opts)
     -- Re-order to previous/next
     map('n', '<A-<>', ':BufferMovePrevious<CR>', opts)
-    map('n', '<A->>', ' :BufferMoveNext<CR>', opts)
+    map('n', '<A->>', ':BufferMoveNext<CR>', opts)
     -- Close buffer
     map('n', '<A-c>', ':BufferClose<CR>', opts)
 
@@ -58,6 +59,7 @@ local function init()
 
     -------------------- OTHER ---------------------------------
     map('i', '<Esc>', '<Esc>:w<CR>')
+    map('n', '<Esc>', '<Esc>:w<CR>')
 
     -------------------- COMMANDS ------------------------------
     cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'  -- disabled in visual mode

@@ -9,9 +9,14 @@ local function init()
     map('n', '<space>ps', [[<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For >")})<CR>]])
 
     -------------------- NvimTreeToggle ------------------------
-    map('n', 'tt', '<cmd>NvimTreeToggle<CR>')
-    map('n', 'tr', '<cmd>NvimTreeRefresh<CR>')
-    map('n', 'tf', '<cmd>NvimTreeFocus<CR>')
+    map('n', '<space>tt', '<cmd>NvimTreeToggle<CR>')
+    map('n', '<space>tr', '<cmd>NvimTreeRefresh<CR>')
+    map('n', '<space>tf', '<cmd>NvimTreeFocus<CR>')
+
+    -------------------- Github Copilot ------------------------
+    map('n', '<space>gd', '<cmd>Copilot disable<CR>')
+    map('n', '<space>ge', '<cmd>Copilot enable<CR>')
+    map('n', '<space>gi', '<cmd>Copilot setup<CR>')
     
     -------------------- BarBar --------------------------------
     -- Move to previous/next

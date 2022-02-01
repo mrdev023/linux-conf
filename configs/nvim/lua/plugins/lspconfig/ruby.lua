@@ -1,5 +1,5 @@
 local function init()
-    require'lspconfig'.solargraph.setup{}
+    require'lspconfig'.sorbet.setup{}
 end
 
 return {

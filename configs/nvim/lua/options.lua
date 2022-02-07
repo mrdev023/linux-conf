@@ -22,6 +22,7 @@ local function init()
     opt.wildmode = {'list', 'longest'}  -- Command-line completion mode
     opt.wrap = false                    -- Disable line wrap
     opt.mouse = 'a'                     -- Enable mouse for all previous modes
+    o.clipboard = 'unnamedplus'         -- Enabled clipboard shared yank
 end
 
 return {

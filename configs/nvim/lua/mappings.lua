@@ -68,6 +68,10 @@ local function init()
 
     -------------------- COMMANDS ------------------------------
     cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'  -- disabled in visual mode
+
+    -------------------- GITHUB COPILOT ------------------------
+    map('i', '<C-j>', [[copilot#Accept("\<CR>")]], {noremap=true, silent=true, expr=true})
+    cmd('let g:copilot_no_tab_map = v:true') -- Disable tab autocomplete github copilot
 end
 
 return {

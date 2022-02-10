@@ -1,7 +1,5 @@
 shell:
-  program: /bin/bash
-  args:
-    - --login
+  program: tmux
 font:
   normal:
     family: FiraCode NF

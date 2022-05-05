@@ -14,6 +14,7 @@ Github: jnettlet
 ## Archlinux (AUR)
 
 AUR: https://aur.archlinux.org/packages/falchion-shutdown
+
 GITHUB: https://github.com/mrdev023/falchion-shutdown
 
 ## Common
